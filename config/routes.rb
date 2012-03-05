@@ -1,5 +1,9 @@
 TwitterClone::Application.routes.draw do
 
+  get "posts/create"
+
+  get "posts/destroy"
+
   get "main/home"
 
   get "main/help"
