@@ -1,5 +1,9 @@
 TwitterClone::Application.routes.draw do
 
+  get "followerships/create"
+
+  get "followerships/destroy"
+
   get "posts/create"
 
   get "posts/destroy"
@@ -20,6 +24,7 @@ TwitterClone::Application.routes.draw do
   resources :users
   resources :sessions
   resources :posts
+  resources :followerships
 
 
   # The priority is based upon order of creation:

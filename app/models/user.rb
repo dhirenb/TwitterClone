@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
                        :source  => :follower
 
   def following?(to_follow)
-    followerships.find_by_follower_id(to_follow)
+    followerships.find_by_followed_id(to_follow)
   end
 
   def follow(to_follow)
@@ -29,7 +29,7 @@ class User < ActiveRecord::Base
   def unfollow(to_not_follow)
     # Double check that we're actually following before doing anything
     if following?(to_not_follow)
-      followerships.find_by_follower_id(to_not_follow).destroy
+      followerships.find_by_followed_id(to_not_follow).destroy
     end
   end
 end

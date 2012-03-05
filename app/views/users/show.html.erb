@@ -11,10 +11,17 @@
       <div><%= @user.followers.count %> Follower</div>
       <br />
       <% if is_user_authenticated? %>
-        <% if current_user.following?(@user) %>
-          <a class="btn btn-primary">Un-Follow!</a>
-        <% else %>
-          <a class="btn btn-primary">Follow!</a>
+        <% if current_user.id != @user.id %>
+          <% if current_user.following?(@user) %>
+            <%= form_for current_user.followerships.find_by_followed_id(@user), :html => { :method => :delete } do |f| %>
+              <%= f.submit "Un-Follow!", :class => "btn btn-primary" %>
+            <% end %>
+          <% else %>
+            <%= form_for current_user.followerships.build(:followed_id => @user.id) do |f| %>
+              <div><%= f.hidden_field :followed_id %></div>
+              <%= f.submit "Follow!", :class => "btn btn-primary" %>
+            <% end %>
+          <% end %>
         <% end %>
       <% else %>
         Log in to follow!
