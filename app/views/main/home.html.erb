@@ -1,2 +1,9 @@
-<h1>Main#home</h1>
-<p>Find me in app/views/main/home.html.erb</p>
+
+<% if is_user_authenticated? %>
+
+  <%= current_user.email %>
+<% else %>
+  Please log in to see more!
+<% end %>
+
+
