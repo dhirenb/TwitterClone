@@ -8,7 +8,44 @@
 </head>
 <body>
 
-<%= yield %>
+  <div id="header">
+    <div class="container">
+      <a id='logo' href='/'><h1>Twitter!</h1></a>
+      <ul id="main-nav">
+        <% if is_user_authenticated? %>
+          <li><%= current_user.email %></li>
+          <li>|</li>
+          <li><a href="#">Settings</a></li>
+          <li><a href="#">Help</a></li>
+          <li><%= link_to "Logout", logout_path %></li>
+        <% else %>
+          <li><%= link_to "Sign Up", signup_path %></li>
+          <li><%= link_to "Login", login_path %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+  <div class="container">
+
+    <% if notice %>
+      <div class="alert"><%= notice %></div>
+    <% elsif alert %>
+      <div class="alert"><%= alert %></div>
+    <% end %>
+
+    <%= yield %>
+
+    <div id="footer">
+      <ul id="footer-nav">
+        <li><a href="#">About</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Help</a></li>
+        <li><a href="#">Jobs</a></li>
+        <li><a href="#">Terms of Use</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </div>
 
 </body>
 </html>

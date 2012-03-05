@@ -6,3 +6,70 @@
  *= require_self
  *= require_tree . 
 */
+
+body {
+  background-color: #FAFAFA;
+  font-family: helvetica, arial, freesans, clean, sans-serif;
+}
+
+#header {
+  background-image: url('/assets/sand-bg.png');
+  border-bottom: solid 1px #DBDCDE;
+  padding: 15px;
+  font-family: 'Lobster', cursive;
+  margin-bottom: 20px;
+
+  h1 {
+    position: relative;
+    float: left;
+    cursor: pointer;
+  }
+
+  a#logo:link { text-decoration: none; }
+  a#logo:visited { text-decoration: none; }
+  a#logo:active { text-decoration: none; }
+  a#logo:hover { text-decoration: none; }
+}
+
+#main-nav {
+  font-family: helvetica, arial, freesans, clean, sans-serif;
+  list-style-type: none;
+  font-weight: bold;
+  font-size: 12px;
+  position: relative;
+  float: right;
+  margin: 0px;
+  padding: 0px;
+
+  li {
+    display: inline; 
+    padding: 0px 0px 0px 10px;
+    line-height: 35px;
+  }
+}
+
+#footer {
+  margin-top: 30px;
+  border-top: dashed 1px #DBDCDE;
+  padding-top: 5px;
+}
+
+#footer-nav {
+  font-family: helvetica, arial, freesans, clean, sans-serif;
+  list-style-type: none;
+  font-size: 11px;
+  position: relative;
+  float: right;
+  margin: 0px;
+  padding: 0px;
+
+  li {
+    display: inline; 
+    padding: 0px 0px 0px 10px;
+  }
+}
+
+ul {
+  margin: 0px;
+}
+

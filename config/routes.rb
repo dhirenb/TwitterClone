@@ -1,5 +1,13 @@
 TwitterClone::Application.routes.draw do
 
+  get "main/home"
+
+  get "main/help"
+
+  get "main/about"
+
+  root :to => "main#home"
+
   # Lets create easy login/logout routes
   get "logout" => "sessions#destroy", :as => "logout"
   get "login" => "sessions#new", :as => "login"
