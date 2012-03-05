@@ -1,4 +1,8 @@
 <ul id="user_feed_list">
+  <% if @posts.nil? || @posts.count == 0 %>
+    You have no posts :(<br />
+    BUT, You can fix it on the left! :)
+  <% end %>
   <% @posts.each do |post| %>
     <li class="post">
       <div>

@@ -9,6 +9,16 @@
       <div><%= @user.posts.count %> Posts!</div>
       <div><%= @user.following.count %> Following</div>
       <div><%= @user.followers.count %> Follower</div>
+      <br />
+      <% if is_user_authenticated? %>
+        <% if current_user.following?(@user) %>
+          <a class="btn btn-primary">Un-Follow!</a>
+        <% else %>
+          <a class="btn btn-primary">Follow!</a>
+        <% end %>
+      <% else %>
+        Log in to follow!
+      <% end %>
     </div>
   </div>
 </div>
