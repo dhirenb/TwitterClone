@@ -1,7 +1,19 @@
 
 <% if is_user_authenticated? %>
 
-  <%= current_user.email %>
+  <div class="row">
+    <div class="span3" id="user_info">
+      <div class="well">
+        <%= render 'shared/user_info' %>
+
+      </div>
+    </div>
+    <div class="span9" id="user_tweets">
+      <div class="well">
+        <%= render 'shared/posts_create' %>
+      </div>
+    </div>
+  </div>
 <% else %>
   Please log in to see more!
 <% end %>
