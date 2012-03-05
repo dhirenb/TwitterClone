@@ -1,0 +1,8 @@
+
+<h1>Feed</h1>
+
+<ul id="user_feed_list">
+  <% @posts.each do |post| %>
+    <li class="post"><%= post.content %></li>
+  <% end %>
+</ul>
