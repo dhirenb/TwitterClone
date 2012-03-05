@@ -71,5 +71,35 @@ body {
 
 ul {
   margin: 0px;
+  list-style-type: none;
 }
 
+.feed_header {
+  font-size: 35px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  color: #007dbf;
+}
+
+#user_feed_list {
+  .post {
+    color: black;
+    padding: 5px 0px 5px 5px;
+    border-bottom: solid 1px #EEE;
+    border-top: solid 1px #FFF;
+    line-height: 25px;
+  }
+
+  .post:hover {
+    background-color: #FFC;
+    cursor: pointer;
+  }
+}
+
+.floatleft {
+  float: left;
+}
+
+.floatright {
+  float:right;
+}

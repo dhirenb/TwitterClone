@@ -1,16 +1,19 @@
 <div class="row" id="main_profile">
-  <div class="well">
-    <div class="span8">
-      <%= @user.email %>
+  <div class="span8">
+    <div class="user_profile">
+      <span class="user_profile_name"><%= @user.name %></span> - <span class="user_profile_email"><%= @user.email %></span>
     </div>
-    <div class="span3">
-      FOLLOW!
+  </div>
+  <div class="span4">
+    <div class="well">
+      <div><%= @user.posts.count %> Posts!</div>
+      <div><%= @user.following.count %> Following</div>
+      <div><%= @user.followers.count %> Follower</div>
     </div>
   </div>
 </div>
 
 <div class="row">
-  <div class="well">
-    <%= render 'shared/user_feed' %>
-  </div>
+  <div class="feed_header">Tweets</div>
+  <%= render 'shared/user_feed' %>
 </div>
