@@ -2,16 +2,15 @@
 <% if is_user_authenticated? %>
 
   <div class="row">
-    <div class="span3" id="user_info">
+    <div class="span4" id="user_info">
       <div class="well">
         <%= render 'shared/user_info' %>
-
       </div>
-    </div>
-    <div class="span9" id="user_tweets">
       <div class="well">
         <%= render 'shared/posts_create' %>
       </div>
+    </div>
+    <div class="span8" id="user_tweets">
     </div>
   </div>
 <% else %>
